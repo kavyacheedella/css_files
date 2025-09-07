@@ -13,24 +13,26 @@
 
     simple selectors - element selector ,class selector (.) , id selector (#) , grouping selector (,) , universal selector(*)
     id has higher specificity than class selector
-    class has higher specificity than element selector
+    class has higher specificity than element selector -->
     
-    box model - content , padding , border , margin
+     <!--  box model - content , padding , border , margin
+    The box model explains how the browser calculates the space an element takes on the page → Content + Padding + Border + Margin.
     content - width and height of the element
     padding - space b/w content and border
     padding properties- padding-top,padding-bottom,padding-right,padding-left
     border - space b/w padding and margin
-    border properties - border-style,border-width,border-color,border-radius,border
+    border properties - border-style,border-width,border-color,border-radius,border-left,right,top,bottom
     margin - space b/w border and other elments
-    margin propertie - margin-top,margin-bottom,margin-right,margin-left
+    margin propertie - margin-top,margin-bottom,margin-right,margin-left -->
 
-    css units - px,em,rem,%,vw,vh,cm,mm,in,ch,ex
+    <!-- css units - px,em,rem,%,vw,vh,cm,mm,in,ch,ex
 
     in css negative values -pull the content towards the left or top
     positive values - push the content towards the right or bottom 
-    border shorthand - px,style,color-->
-
+    border shorthand - px,style,color -->
+    
     <!-- 
+    position controls where an element sits in relation to the page, its parent, or the viewport.
     position property--- 5 values
     1)static -- default value
     2)absolute --  top="value" , bottom="value" , right="value" , left="value"
@@ -46,7 +48,30 @@
     selector{
     position:static,absolute,relative,sticky,fixed
     }
+    classname{
+    display:inline:block;
+    display:block;
+    display:inline-block;
+    display:none; it does not show the container another conatiner will replace in that place if we use display none for one container.
+    visibility:hidden; it hides the container and place of that container have their place and cannot replace the other container in that place.
+
+    z-index = “layer number” for overlapping elements. Higher values are on top, lower values are behind.
+    z-index controls the stacking order of elements on a webpage.
+    It decides which element appears on top of or behind another when they overlap
+
+    text-tranform:captalize,lowercase,uppercase;
+    }
      -->
+
+     <!-- 
+          Combinators--
+          4 types of selectors
+          1.child sibling selector (>)
+          2.descendent selector  (space)
+          3.adjacent sibiling selector (+) or next sibling sele
+          4.general sibling selctor (~)
+these are most impacted in pseudo classes and pseudo elements.
+      -->
 <head>
     <link rel="stylesheet" href="css1.css">
     <meta charset="UTF-8">

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css3.css">
+</head>
+<body align="center">
+    <h3  class="heading-container">🌟John Deos's Web Portfolio</h3>
+    <nav>
+        <div class="container">
+            <a href="#About">About</a>
+            <a href="#Skills">Skills</a> 
+            <a href="#Projects">Projects</a>
+            <a href="#Contact">Contact</a>
+       </div> 
+    </nav>
+    <hr>
+    <table border="1" cellspacing="0" cellpadding="5" width="90%" align="center">
+        <tr>
+            <td colspan="2" id="About" align="left"><b>About</b>
+            <img src="./images/download2.jpeg" alt="John Doe" width="100" height="100" align="right">
+            <p>Hello! I'm <b>John Doe </b>, a passionate web developer . I love building semantic , accessible , and responsive websites using core web technologies.</p>
+            <p>I specialise in front-end development,especially HTML, CSS and JavaScript.</p>
+            </td>
+        </tr>
+        <tr align="left">
+            <td id="Skills"><b>Skills</b>
+                 <ul>
+                     <li>HTML5/CSS</li>
+                     <li>JavaScript(ES6++)</li>
+                     <li>Responsive Design</li>
+                     <li>Git and Github</li>
+                 </ul>
+
+            <table border="1" cellspacing="1" cellpadding="3" width="20%" align="left">
+                <caption align="left"><b>📝Skill Levels</b></caption>
+                <tr>
+                    <td>HTML</td>
+                    <td>Expert</td>
+                </tr>
+                <tr>
+                    <td>Css</td>
+                    <td>Advanced</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>Intermediate</td>
+                </tr>
+            </table>
+            </td>
+            <td id="Projects" align="left">
+                <b>Projects</b>
+                <ol type="1">
+                    <li><b>Protofolio Website-</b>My personal portofolio built uising pure HTML and Css</li>
+                    <li><b>Todo App-</b>A task management tool with vanilla JavaScript</li>
+                    <li><b>Weather App-</b>A real-time weather dashboard using APIs.</li>
+                </ol>
+                <details>
+                    <summary>
+                         <b>🖼️ScreenShot</b>
+                    </summary>
+                    <img src="./images/testimage.jpg" alt="Project image" width="200" height="200">
+                </details>
+                <details>
+                    <summary>
+                         <b>🖼️Project Preview</b>
+                    </summary>
+                    <img src="./images/testimage.jpg" alt="Project image" width="200" height="200">
+                </details>
+            </td>
+        </tr>
+        <br>
+        <br>
+        <tr align="left">
+        <td id="Contact" colspan="2"> <b>Contact Me</b>
+            <br><br>
+            <fieldset>
+                <legend><b>Contact Form</b></legend>
+                <form action="test.html" method="get" enctype="text/plain" align="left">
+                    <label for="name">First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" id="name" name="name" required><br><br>
+                    <label for="email">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="email" id="email" name="email" required><br><br>
+                    Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label><br><br>
+        
+                    ServiceInterested:
+    
+                    <input type="checkbox" id="Web Design" name="Service Interested" value="Web Design">
+                    <label for="Web Design">Web Design</label>
+                    <input type="checkbox" id="SEO" name="Service Interested" value="SEO">
+                    <label for="SEO">SEO</label><br><br>
+
+                    <label for="country">Country:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <select id="country" name="country">
+                        <option value="India">India</option>
+                        <option value="USA" selected>USA</option>
+                        <option value="UK">UK</option>
+                        <option value="Canada">Canada</option>
+                    </select><br><br>
+
+                    <label for="message">Message:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="submit" name="send" value="Send">
+                    <input type="submit" name="clear" value="Clear">
+
+                </form>
+            </td>
+        </tr>
+        <tr align="center">
+            <td align="center" colspan="2">
+            <p>📅Last Updated : August 13,2025</p>
+            <p>Created by John Doe</p>
+            <p>Email:<a href="">john@example.com</a></p>
+            <p>Website:<a href="">example.com</a></p>
+            <p>@ 2025 John Doe. All Rights reserved</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

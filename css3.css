@@ -1,0 +1,26 @@
+*{
+   scroll-behavior: smooth;
+}
+
+.heading-container{
+    margin-top: 50px;
+}
+.container {
+  margin: 0px;
+  background-color: black;
+  padding: 10px;
+  color: rgb(166, 189, 210);
+  width: 100%;
+  position: fixed;
+  top: 0px;
+}
+
+.container a {
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+}
+.container a:hover {
+  text-decoration: underline;
+}
+
