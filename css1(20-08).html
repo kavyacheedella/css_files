@@ -1,5 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- 
+🔹 1. Block Elements
+
+Sentence: “A block element always starts on a new line and takes up the full width available.”
+
+Height and width can be set.
+
+Examples: <div>, <p>, <h1>–<h6>, <section>.
+
+<address>, <article>, <aside>, <blockquote>, <canvas>, <dd>, <div>,
+<dl>, <dt>, <fieldset>, <figcaption>, <figure>, <footer>, <form>, 
+<h1>–<h6>, <header>, <hr>, <li>, <main>, <nav>, <noscript>, <ol>, 
+<p>, <pre>, <section>, <table>, <tfoot>, <ul>, <video>
+
+<div style="border:1px solid red;">This is a DIV</div>
+<p style="border:1px solid blue;">This is a Paragraph</p>
+<h1 style="border:1px solid green;">This is a Heading</h1>
+
+🔹 2. Inline Elements
+
+Sentence: “An inline element does not start on a new line and only takes up as much width as its content.”
+
+Height and width cannot be set directly.
+
+Examples: <span>, <a>, <strong>, <em>.
+
+    The <span> tag in HTML is an inline container used to group text or other inline elements for styling or scripting purposes.
+        <span> = "Apply style/JS to a specific word or phrase inside a line, without breaking the layout."
+
+<p>This is <span style="border:1px solid green;">Inline</span> text.</p>
+
+<a>, <abbr>, <acronym>, <b>, <bdo>, <big>, <br>, <button>, <cite>, 
+<code>, <dfn>, <em>, <i>, <img>, <input>, <kbd>, <label>, <map>, 
+<object>, <output>, <q>, <samp>, <script>, <select>, <small>, <span>, 
+<strong>, <sub>, <sup>, <textarea>, <time>, <tt>, <var>
+
+🔹 3. Inline-Block Elements
+
+Sentence: “An inline-block element behaves like inline (does not break line) but allows setting width and height like a block element.”
+
+Best of both worlds.
+
+Examples (when styled): <img>, <button>, or custom <div style="display:inline-block;">.
+
+    <img>, <button>, <input>, <textarea>, <select>, <label>
+
+✅ Summary
+
+Block → structure/containers (div, section, p, h1–h6).
+
+Inline → text-level formatting (span, a, b, em, img).
+
+Inline-block → form controls/images (img, input, button), or any tag with display:inline-block;.
+
+🔹 1. Formatting Tags in HTML
+
+Formatting tags are used to change the appearance of text.
+
+Here’s a list of the most common ones:
+
+Tag	Use	Example
+<b>	Bold text (without meaning)	<b>Bold</b> → Bold
+<strong>	Important text (semantic)	<strong>Important</strong> → Important
+<i>	Italic text (without meaning)	<i>Italic</i> → Italic
+<em>	Emphasized text (semantic)	<em>Emphasized</em> → Emphasized
+<mark>	Highlighted text	<mark>Highlighted</mark> → <mark>Highlighted</mark>
+<small>	Smaller text	<small>Small text</small> → <small>Small text</small>
+<del>	Deleted/strikethrough text	<del>Deleted</del> → Deleted
+<ins>	Inserted/underlined text	<ins>Inserted</ins> → <ins>Inserted</ins>
+<sub>	Subscript	H<sub>2</sub>O → H₂O
+<sup>	Superscript	X<sup>2</sup> → X²
+
+🔹 2. HTML Entities
+
+Entities are used to display reserved characters (like <, >, &) or special symbols (like ©, ®, →).
+
+Entity	Symbol	Example
+&lt;	<	&lt;div&gt; → <div>
+&gt;	>	&gt; → >
+&amp;	&	&amp; → &
+&quot;	"	&quot;Hello&quot; → "Hello"
+&apos;	'	&apos; → '
+&nbsp;	(non-breaking space)	Hello&nbsp;World → Hello World
+&copy;	©	&copy; 2025 → © 2025
+&reg;	®	OpenAI&reg; → OpenAI®
+&trade;	™	ChatGPT&trade; → ChatGPT™
+&euro;	€	&euro; → €
+&yen;	¥	&yen; → ¥
+&pound;	£	&pound; → £
+&hearts;	♥	&hearts; → ♥
+ -->
+
+
     <!-- 1.inline styles - styles are applied directly to the html elements using the style attributes.
     2.internal styles - styles are defined within the head section of the html document using the style tag.
     3.external styles - styles are defined in a separate css file and linked to the html document using the link tag.
@@ -71,9 +165,415 @@
           3.adjacent sibiling selector (+) or next sibling sele
           4.general sibling selctor (~)
 these are most impacted in pseudo classes and pseudo elements.
+     
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Selectors Example</title>
+</head>
+<body>
+  <div class="container">
+    <h1 id="main-title">Welcome</h1>
+    <p>This is a paragraph inside container.</p>
+    <div class="box">
+      <p class="highlight">This is inside the box.</p>
+      <span>Some span text</span>
+    </div>
+    <p>This is another paragraph after box.</p>
+  </div>
+  <p>Paragraph outside container</p>
+</body>
+</html>
 
+ 🔹 Basic Selectors
+1. Universal Selector (*)
+
+Sentence: “Selects all elements on the page.”
+
+* { color: blue; }
+
+2. Type Selector (element selector)
+
+Sentence: “Selects all elements of a given HTML tag.”
+
+p { color: red; }   /* all <p> elements */
+
+3. Class Selector (.classname)
+
+Sentence: “Selects all elements with the specified class attribute.”
+
+.box { background: yellow; }
+
+4. ID Selector (#idname)
+
+Sentence: “Selects the element with the specified ID (unique on a page).”
+
+#header { font-size: 20px; }
+
+5. Group Selector (,)
+
+Sentence: “Selects multiple different elements and applies the same style.”
+
+h1, h2, p { font-family: Arial; }
+
+🔹 Attribute Selectors
+6. Attribute Selector ([attr])
+
+Sentence: “Selects elements that have the specified attribute.”
+
+input[type] { border: 1px solid black; }
+
+
+7. Attribute Value Selector ([attr="value"])
+
+Sentence: “Selects elements where the attribute has the specified value.”
+
+input[type="text"] { background: lightgray; }
+
+🔹 Pseudo-classes
+8. Pseudo-class Selector (:hover, :focus, etc.)
+
+Sentence: “Selects elements in a specific state or condition.”
+
+a:hover { color: green; }   /* when mouse is over link */
+
+🔹 Pseudo-elements
+9. Pseudo-element Selector (::before, ::after, ::first-letter)
+
+Sentence: “Selects and styles specific parts of an element.”
+
+p::first-letter { font-size: 24px; color: red; }
+
+
+
+🔹 1. Descendant Combinator (space )
+
+👉 Selects all elements that are inside (nested anywhere) within another element.
+
+div p { ... }
+
+
+Sentence: “Select all <p> elements that are descendants of a <div>.”
+
+🔹 2. Child Combinator (>)
+
+👉 Selects elements that are direct children only of another element.
+
+div > p { ... }
+
+
+Sentence: “Select all <p> elements that are direct children of a <div>.”
+
+🔹 3. Adjacent Sibling Combinator (+)
+
+👉 Selects the immediately next sibling of an element.
+
+h1 + p { ... }
+
+
+Sentence: “Select the first <p> element that comes immediately after an <h1>.”
+
+🔹 4. General Sibling Combinator (~)
+
+👉 Selects all siblings that come after an element (not just the first).
+
+h1 ~ p { ... }
+
+
+Sentence: “Select all <p> elements that are siblings of an <h1> and come after it.”
+
+    ✅ In short, sentences:
+
+Descendant ( ) → “All nested inside.”
+
+Child (>) → “Direct children only.”
+
+Adjacent (+) → “The very next sibling.”
+
+General (~) → “All later siblings.”
         
       -->
+
+<!--  
+
+🔹 Common Display Values
+
+1. block
+
+Takes up the full width of the page.
+
+Always starts on a new line.
+
+Width/height can be set.
+
+div {
+  display: block;
+}
+
+
+👉 Example: <div>, <p>, <h1>
+
+2. inline
+
+Takes only as much space as its content.
+
+Does not start on a new line.
+
+Width/height cannot be set.
+
+span {
+  display: inline;
+}
+
+
+👉 Example: <span>, <a>, <strong>
+
+3. inline-block
+
+Behaves like inline (stays in same line).
+
+But allows setting width and height like block.
+
+button {
+  display: inline-block;
+}
+
+
+👉 Example: <button>, <img>
+
+4. none
+
+Hides the element completely (it won’t take space).
+
+h1 {
+  display: none;
+}
+
+5. flex
+
+Makes the container a flexbox.
+
+Lets you arrange child elements in a row/column, align, justify, etc.
+
+.container {
+  display: flex;
+}
+
+6. grid
+
+Makes the container a grid.
+
+Allows arranging items in rows and columns.
+
+.container {
+  display: grid;
+}
+
+7. list-item
+
+Makes the element behave like <li> (list item with marker).
+
+p {
+  display: list-item;
+}
+
+8. table, table-row, table-cell
+
+Makes elements behave like table parts.
+
+div {
+  display: table;
+}
+span {
+  display: table-cell;
+}
+      
+🔹 What is display: flex;?
+
+It turns a container into a flexbox.
+
+Flexbox makes it easy to arrange items in rows or columns, and to control alignment, spacing, and order.
+
+Think of it like a magic box 📦 that arranges its children neatly without you doing lots of math.
+
+👉 Example:
+
+<div style="display:flex; border:2px solid black;">
+  <div style="background:red; width:50px; height:50px;"></div>
+  <div style="background:blue; width:50px; height:50px;"></div>
+  <div style="background:green; width:50px; height:50px;"></div>
+</div>
+
+
+✅ The 3 boxes automatically line up in a row.
+
+🔹 Important Flex Properties
+1. Flex Direction
+
+Controls the direction of items inside flexbox.
+
+.container {
+  display: flex;
+  flex-direction: row;      /* Default: left to right */
+  flex-direction: row-reverse; /* Right to left */
+  flex-direction: column;      /* Top to bottom */
+  flex-direction: column-reverse; /* Bottom to top */
+}
+
+2. Justify Content
+
+Aligns items horizontally (main axis).
+
+.container {
+  justify-content: flex-start;  /* Default: items at left */
+  justify-content: flex-end;    /* Items at right */
+  justify-content: center;      /* Items in center */
+  justify-content: space-between; /* Equal gaps between items */
+  justify-content: space-around;  /* Equal space around items */
+  justify-content: space-evenly;  /* Equal spacing everywhere */
+}
+
+3. Align Items
+
+Aligns items vertically (cross axis).
+
+.container {
+  align-items: stretch;    /* Default: stretch to container height */
+  align-items: flex-start; /* Top */
+  align-items: flex-end;   /* Bottom */
+  align-items: center;     /* Middle */
+  align-items: baseline;   /* Based on text baseline */
+}
+
+4. Align Content
+
+Used when there are multiple rows (like wrapping items).
+
+.container {
+  flex-wrap: wrap; /* needed for align-content */
+  align-content: flex-start;
+  align-content: flex-end;
+  align-content: center;
+  align-content: space-between;
+  align-content: space-around;
+  align-content: stretch; /* default */
+}
+
+5. Flex Wrap
+
+Controls whether items stay in one line or wrap.
+
+.container {
+  flex-wrap: nowrap; /* default */
+  flex-wrap: wrap;   /* items wrap to next line */
+  flex-wrap: wrap-reverse; /* wrap but reversed */
+}
+
+6. Gap (modern shortcut for spacing)
+.container {
+  display: flex;
+  gap: 20px; /* adds spacing between flex items */
+}
+
+7. Order (per item)
+
+Changes the order of items without changing HTML.
+
+.item1 { order: 2; }
+.item2 { order: 1; }
+.item3 { order: 3; }
+
+8. Flex Grow, Shrink, and Basis
+
+These are applied to individual items:
+
+.item {
+  flex-grow: 1;   /* how much item can grow */
+  flex-shrink: 1; /* how much item can shrink */
+  flex-basis: 100px; /* starting size */
+}
+
+
+Shortcut:
+
+.item { flex: 1 1 100px; } /* grow, shrink, basis */
+
+
+✅ Summary in one line:
+
+display: flex; makes layouts easier.
+
+Main properties:
+
+flex-direction → row or column
+
+justify-content → horizontal alignment
+
+align-items → vertical alignment
+
+flex-wrap → wrapping items
+
+gap → spacing
+
+order and flex → control individual items
+
+
+🔹 What does flex-wrap mean?
+
+When you use display: flex, all items are put in one line by default (no matter how many).
+👉 If they don’t fit, they shrink and squeeze into the same line.
+
+The flex-wrap property tells the browser what to do when items don’t fit in one line.
+
+✅ Values of flex-wrap
+
+nowrap (default)
+👉 All items stay in one line, even if they overflow.
+
+.container {
+  display: flex;
+  flex-wrap: nowrap; /* default */
+}
+
+
+wrap
+👉 Items will move to the next line if there’s not enough space.
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+wrap-reverse
+👉 Same as wrap, but items move to the next line in the reverse direction.
+
+.container {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+🔹 Example:
+<div style="display:flex; flex-wrap:wrap; border:2px solid black; width:250px;">
+  <div style="background:red; width:100px; height:50px;">1</div>
+  <div style="background:blue; width:100px; height:50px;">2</div>
+  <div style="background:green; width:100px; height:50px;">3</div>
+  <div style="background:orange; width:100px; height:50px;">4</div>
+</div>
+
+
+👉 Here, since the container width is 250px, only 2 boxes fit per row.
+The rest wrap to the next line.
+
+✅ In short:
+
+nowrap = all in one row (default).
+
+wrap = move to new line when needed.
+
+wrap-reverse = move to new line but in reverse order.
+
+-->
 <head>
     <link rel="stylesheet" href="css1.css">
     <meta charset="UTF-8">
