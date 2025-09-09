@@ -640,7 +640,45 @@ Because flex-shrink = 1 (default) → boxes shrink to fit.
 Then they won’t shrink, and they’ll overflow outside the container.
 
 
+🔹 Flexbox Properties
 
+We divide them into two groups:
+
+1️⃣ Flex Container Properties (applied to the parent box)
+
+These control how child items are arranged.
+
+
+| Property            | Values                                                                              | Use                                             |
+| ------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------- |
+| **flex-direction**  | `row` (default), `row-reverse`, `column`, `column-reverse`                          | Sets the direction of items                     |
+| **flex-wrap**       | `nowrap` (default), `wrap`, `wrap-reverse`                                          | Controls wrapping of items                      |
+| **flex-flow**       | shorthand → `flex-direction flex-wrap`                                              | Example: `flex-flow: row wrap;`                 |
+| **justify-content** | `flex-start`, `flex-end`, `center`, `space-between`, `space-around`, `space-evenly` | Aligns items **horizontally** (main axis)       |
+| **align-items**     | `stretch` (default), `flex-start`, `flex-end`, `center`, `baseline`                 | Aligns items **vertically** (cross axis)        |
+| **align-content**   | `stretch`, `flex-start`, `flex-end`, `center`, `space-between`, `space-around`      | Aligns **multiple rows** (when wrap is used)    |
+| **gap**             | `<length>`                                                                          | Adds spacing between items (e.g., `gap: 10px;`) |
+
+
+2️⃣ Flex Item Properties (applied to the children inside the flex container)
+
+These control individual item behavior.
+
+| Property        | Values                                                            | Use                                            |
+| --------------- | ----------------------------------------------------------------- | ---------------------------------------------- |
+| **order**       | `<number>`                                                        | Controls the order of items (default `0`)      |
+| **flex-grow**   | `<number>`                                                        | How much an item can grow relative to others   |
+| **flex-shrink** | `<number>`                                                        | How much an item can shrink relative to others |
+| **flex-basis**  | `<length>` (e.g., `100px`, `auto`)                                | The initial size of an item                    |
+| **flex**        | shorthand → `flex-grow flex-shrink flex-basis`                    | Example: `flex: 1 0 200px;`                    |
+| **align-self**  | `auto`, `flex-start`, `flex-end`, `center`, `baseline`, `stretch` | Overrides `align-items` for one item           |
+
+
+✅ Summary in one line:
+
+Container properties: flex-direction, flex-wrap, flex-flow, justify-content, align-items, align-content, gap.
+
+Item properties: order, flex-grow, flex-shrink, flex-basis, flex, align-self.
 -->
 <head>
     <link rel="stylesheet" href="css1.css">
