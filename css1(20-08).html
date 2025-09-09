@@ -573,6 +573,74 @@ wrap = move to new line when needed.
 
 wrap-reverse = move to new line but in reverse order.
 
+🔹 When you write:
+.container {
+  display: flex;
+}
+
+
+👉 This only makes the container a flexbox.
+It does not directly set flex-shrink or flex-grow.
+
+🔹 What happens to the children (flex items)?
+
+When elements become flex items (because the parent has display: flex), the browser gives them these default values:
+
+flex-grow: 0;
+flex-shrink: 1;   /* ✅ yes, shrink = 1 by default */
+flex-basis: auto;
+
+
+That is the same as writing:
+
+flex: 0 1 auto;
+
+
+✅ So the answer:
+
+display: flex itself doesn’t set flex-shrink.
+
+But it makes the children into flex items, and flex items by default get flex-shrink: 1.
+
+👉 Example:
+
+<div class="container">
+  <div class="box">A</div>
+  <div class="box">B</div>
+  <div class="box">C</div>
+</div>
+
+<style>
+.container {
+  display: flex;
+  width: 200px; /* small container */
+  border: 2px solid black;
+}
+.box {
+  width: 100px; /* each wants 100px */
+  background: lightblue;
+  margin: 5px;
+}
+</style>
+
+
+Each box wants 100px, total = 300px.
+
+Container is only 200px wide.
+
+Because flex-shrink = 1 (default) → boxes shrink to fit.
+
+👉 If you add:
+
+.box {
+  flex-shrink: 0;
+}
+
+
+Then they won’t shrink, and they’ll overflow outside the container.
+
+
+
 -->
 <head>
     <link rel="stylesheet" href="css1.css">
