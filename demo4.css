@@ -1,0 +1,151 @@
+*{
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    transform: scale(1,1);
+}
+.container{
+    position: fixed;
+    width: 100%;
+    background-color:white;
+    display: flex;
+    justify-content: space-between;
+    top:0;
+    z-index: +1;
+}
+
+.navbar {
+  background-color: white;
+  padding: 10px;
+  position: relative;
+  left: 100px;
+}
+
+/* Menu */
+.menu {
+  height: 600px;
+  width: 400px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none; /* hidden initially */
+  flex-direction: column;
+  background-color: white;
+  position: absolute;
+  top: 30px;
+  left:0;
+  right: 0;
+}
+
+.menu li {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.menu a ,.menu label{
+    padding: 5px;
+    display: block;
+    text-align: left;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+}
+
+.hamburger span {
+  background: black;
+  height: 2px;
+  margin: 2px 0;
+  width: 50%;
+}
+
+/* Hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Show menu when checked */
+#menu-toggle:checked ~ .menu {
+   display: flex;
+}
+
+
+.MyFood{
+    position: absolute;
+    left:550px;
+    top:6px;
+    color: rgb(8, 8, 8);
+    padding: 5px;
+    letter-spacing: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+}
+
+.Mail{
+    position: absolute;
+    right:100px;
+    top:6px;
+    color: rgb(10, 10, 10);
+    padding: 5px;
+    letter-spacing: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+}
+
+.second-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.inner-container {
+    position: absolute;
+    top:100px;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container{
+    width: 200px;
+    height: 450px;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    padding-bottom: 140px;
+}
+
+.img-container > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-container >h3{
+    margin: 10px 0;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 300;
+    font-size: large;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.img-container >p{
+    margin: 10px 0;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-size: small;
+    text-align: center;
+}
