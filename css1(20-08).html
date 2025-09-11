@@ -679,7 +679,277 @@ These control individual item behavior.
 Container properties: flex-direction, flex-wrap, flex-flow, justify-content, align-items, align-content, gap.
 
 Item properties: order, flex-grow, flex-shrink, flex-basis, flex, align-self.
+
+
+The object-fit property in CSS is used to control how an image or video fits inside its container (like a <div>, <img>, or <video>).
+
+Normally, if the image size doesn’t match the container, it may stretch, cut off, or leave empty space.
+object-fit helps you decide what should happen.
+
+🔹 Syntax
+img {
+  object-fit: value;
+}
+
+✅ Values of object-fit
+
+fill (default)
+👉 The image stretches to fill the container. It may look distorted.
+
+object-fit: fill;
+
+
+contain
+👉 The whole image fits inside the container, keeping its aspect ratio.
+But it may leave empty space (letterboxing).
+
+object-fit: contain;
+
+
+cover
+👉 The image covers the entire container while keeping aspect ratio.
+Some parts may be cropped.
+
+object-fit: cover;
+
+
+none
+👉 The image keeps its original size (not resized).
+If bigger than the container, it will overflow.
+
+object-fit: none;
+
+
+scale-down
+👉 The image is sized as either none or contain, whichever is smaller.
+
+object-fit: scale-down;
+
+🔹 Example
+<div style="width:200px; height:150px; border:2px solid black;">
+  <img src="https://www.w3schools.com/w3images/house5.jpg" 
+       style="width:100%; height:100%; object-fit:cover;">
+</div>
+
+
+👉 Here the image will fill the box without distortion (but may crop).
+
+✅ In short:
+
+contain = show whole image (might leave space).
+
+cover = fill box completely (might crop).
+
+fill = stretch (can distort).
+
+none = keep real size.
+
+scale-down = smallest between none & contain.
+
+🔹 What is a CSS Transition?
+
+A transition in CSS allows you to smoothly change a CSS property from one value to another, instead of instantly jumping.
+
+👉 Example:
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: blue;
+  transition: all 0.5s; /* smooth change in 0.5s */
+}
+
+.box:hover {
+  width: 200px;
+  background: red;
+}
+
+
+✅ When you hover, the box smoothly grows and changes color in half a second.
+
+🔹 Transition Properties
+
+There are 4 main transition properties:
+
+transition-property
+
+Which CSS property should animate?
+
+Example:
+
+transition-property: width, background-color;
+
+
+transition-duration
+
+How long the transition takes.
+
+Example:
+
+transition-duration: 0.5s; /* 0.5 seconds */
+
+
+transition-timing-function
+
+The speed curve of the animation.
+
+Options:
+
+ease (default) → starts slow, fast in middle, slow at end
+
+linear → constant speed
+
+ease-in → starts slow, then fast
+
+ease-out → starts fast, ends slow
+
+ease-in-out → slow → fast → slow
+
+cubic-bezier(...) → custom curve
+
+Example:
+
+transition-timing-function: ease-in-out;
+
+
+transition-delay
+
+Wait before starting the transition.
+
+Example:
+
+transition-delay: 0.3s; /* wait 0.3s, then start */
+
+🔹 Shorthand
+
+Instead of writing all 4 separately, you can write in one line:
+
+transition: property duration timing-function delay;
+
+
+👉 Example:
+
+transition: width 0.5s ease-in-out 0.2s;
+
+
+Animates width
+
+Takes 0.5s
+
+Uses ease-in-out
+
+Starts after 0.2s delay
+
+✅ Summary in one line:
+Transitions make property changes smooth instead of instant, using transition-property, transition-duration, transition-timing-function, and transition-delay.
 -->
+<!-- 
+🔹 What is transform?
+
+The transform property in CSS is used to change the shape, size, and position of an element without disturbing the rest of the layout.
+
+👉 Think of it like moving, rotating, zooming, or skewing an element on the page.
+
+🔹 Common Transform Functions
+
+translate(x, y) → Moves an element
+
+.box {
+  transform: translate(50px, 20px); /* move 50px right, 20px down */
+}
+
+
+rotate(angle) → Rotates an element
+
+.box {
+  transform: rotate(45deg); /* rotate 45 degrees */
+}
+
+
+scale(x, y) → Zoom in or out (resize)
+
+.box {
+  transform: scale(1.5);   /* 1.5 times bigger */
+  transform: scale(0.5);   /* half size */
+}
+
+
+skew(x, y) → Slant the element
+
+.box {
+  transform: skew(20deg, 10deg); /* skew horizontally and vertically */
+}
+
+
+matrix(a, b, c, d, e, f) → Combines all transforms in one (advanced).
+
+🔹 Example
+.box {
+  width: 100px;
+  height: 100px;
+  background: blue;
+  transition: transform 0.5s;
+}
+
+.box:hover {
+  transform: scale(1.2) rotate(15deg) translate(20px, 10px);
+}
+
+
+✅ When you hover:
+
+Box zooms in
+
+Rotates
+
+Moves to the side
+
+🔹 Transform + Transform-origin
+
+You can also change where the transform happens from:
+
+.box {
+  transform-origin: top left; /* rotate around top-left corner */
+}
+
+
+✅ Summary:
+The transform property lets you move, rotate, scale, and skew elements in 2D (and even 3D with rotateX, rotateY, perspective).
+
+ -->
+
+ <!-- 
+ 🔹 3. Transform + Transition Together
+
+They are often used together:
+
+transform → defines what change happens (rotate, scale, move).
+
+transition → defines how smoothly that change happens.
+
+👉 Example:
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: transform 0.5s ease; /* smooth animation */
+}
+
+.box:hover {
+  transform: rotate(45deg) scale(1.2); /* rotate + zoom smoothly */
+}
+
+
+✅ Hover → box rotates and zooms smoothly in half a second.
+
+🔹 Key Difference in One Line:
+
+Transform = “What change happens” (move, rotate, scale, skew).
+
+Transition = “How the change happens” (speed, smoothness, delay).
+  -->
+
 <head>
     <link rel="stylesheet" href="css1.css">
     <meta charset="UTF-8">
