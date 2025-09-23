@@ -950,6 +950,159 @@ Transform = “What change happens” (move, rotate, scale, skew).
 Transition = “How the change happens” (speed, smoothness, delay).
   -->
 
+
+  <!-- units -->
+  <!-- 
+      1️⃣ Absolute Units – Fixed size
+
+These stay the same no matter the screen size.
+
+px (pixels) – The most common unit. Example: font-size: 16px;
+
+cm, mm, in – Centimeters, millimeters, inches (rarely used for screens).
+
+pt, pc – Points and picas (mainly for print).
+
+👉 Example:
+
+p { font-size: 20px; } /* Always 20 pixels */
+
+2️⃣ Relative Units – Change based on screen or parent element
+
+These adjust according to the device or parent element, making websites more responsive.
+
+% (percentage) – Based on the parent’s size. Example: width: 50%;
+
+em – Based on the font size of the parent element.
+
+rem – Based on the root (html) font size.
+
+vw (viewport width) – Based on the width of the browser window (1vw = 1% of viewport width).
+
+vh (viewport height) – Based on the height of the browser window (1vh = 1% of viewport height).
+
+👉 Example:
+
+div { width: 50%; } /* Half of the parent’s width */
+h1 { font-size: 2rem; } /* Twice the root font size */
+
+🔑 Key Tip:
+
+Use px when you need fixed sizes.
+
+Use %, em, rem, vw, and vh for responsive design so your site looks good on all devices.
+  -->
+
+  <!-- 
+  
+  In CSS, pseudo-classes and pseudo-elements let you style elements in special situations without needing extra HTML.
+They sound similar but have different purposes:
+
+✅ Pseudo-classes (start with :)
+
+👉 They target an existing element when it is in a specific state.
+
+Examples:
+
+:hover → When the mouse is over an element.
+
+:focus → When an input is active (clicked or typed in).
+
+:first-child → Styles the first child of a parent.
+
+:nth-child(2) → Styles the 2nd child.
+
+Example:
+
+button:hover {
+  background-color: lightblue; /* Changes color when hovered */
+}
+
+🎯 Pseudo-elements (start with ::)
+
+👉 They let you create and style a part of an element that isn’t in the HTML.
+
+Examples:
+
+::before → Adds content before an element.
+
+::after → Adds content after an element.
+
+::first-letter → Styles only the first letter of a text.
+
+::selection → Styles text when it’s highlighted.
+
+Example:
+
+p::first-letter {
+  font-size: 30px; /* Makes the first letter big */
+  color: red;
+}
+p::after {
+  content: " ✔"; /* Adds a check mark after the text */
+}
+
+🔑 Difference in One Line:
+
+Pseudo-class (:) → Styles an element’s state (hover, focus, first-child).
+
+Pseudo-element (::) → Styles or creates a part of an element (before, after, first-letter).
+  -->
+
+<!-- media queries--
+  Media queries in CSS are rules that let your website change its style based on the device’s screen size, orientation, or other properties.
+They are key for responsive design, so a site looks good on phones, tablets, and desktops.
+
+🔹 Basic Idea
+
+A media query checks the conditions (like screen width) and applies styles only if the condition is true.
+
+✅ Syntax:
+@media (condition) {
+  /* CSS rules here */
+}
+
+✅ Common Example – Responsive Layout:
+/* Default style for large screens */
+body {
+  background-color: lightblue;
+}
+
+/* Change for screens smaller than 600px (mobile) */
+@media (max-width: 600px) {
+  body {
+    background-color: lightpink;
+  }
+}
+
+
+📱 Here, if the screen width is 600px or less, the background turns pink.
+
+📏 Common Conditions:
+
+max-width: Apply styles when screen is smaller than a value.
+
+min-width: Apply styles when screen is larger than a value.
+
+orientation: portrait or landscape.
+
+prefers-color-scheme: dark or light mode.
+
+Example:
+
+@media (orientation: portrait) {
+  p { font-size: 20px; }
+}
+
+💡 Quick Tip:
+
+Use min-width for a mobile-first approach (start small, grow styles).
+
+Combine conditions with and:
+
+@media (min-width: 600px) and (max-width: 900px) { ... }
+-->
+
 <head>
     <link rel="stylesheet" href="css1.css">
     <meta charset="UTF-8">
