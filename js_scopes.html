@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  Part 1: Concept Tasks
+        // 1. let / var / const Tasks
+
+        // // 1. Create variables
+        // var a = 10;
+        // let b = 20;
+        // const c = 30;
+        // console.log(a, b, c); //  Output: 10 20 30
+
+
+        // // 2. Try to reassign
+        // a = 15;  //  works
+        // b = 25;  // works
+        // // c = 35; Error: Assignment to constant variable
+
+        // console.log(a, b, c); // Output: 15 25 30
+
+
+        // // 3. Block Scope
+        // {
+        //   var x = 5;
+        //   let y = 10;
+        // }
+        // console.log(x); //  Output: 5
+        // console.log(y); //  ReferenceError: y is not defined
+
+
+        // // 4. Function Scope
+        // function test() {
+        //   var x = 100;
+        // }
+        // test();
+        // console.log(x); //  ReferenceError: x is not defined
+
+
+        // 3. Data Types Tasks
+        // let str = "Hello";           // String
+        // let num = 42;                // Number
+        // let bool = true;             // Boolean
+        // let nul = null;              // Null
+        // let undef = undefined;       // Undefined
+        // let obj = { name: "Kavya" }; // Object
+        // let arr = [1, 2, 3];         // Array
+        // let sym = Symbol("id");      // Symbol
+        // let big = 12345678901234567890n; // BigInt
+
+        // console.log(typeof str);   // string
+        // console.log(typeof num);   // number
+        // console.log(typeof bool);  // boolean
+        // console.log(typeof nul);   // object  ❗ (special JS quirk)
+        // console.log(typeof undef); // undefined
+        // console.log(typeof obj);   // object
+        // console.log(typeof arr);   // object
+        // console.log(typeof sym);   // symbol
+        // console.log(typeof big);   // bigint
+
+
+        // 💡 Part 2: 10 Multiple Choice Questions
+
+// 1. Which keyword allows re-declaration of a variable in the same scope?
+// A) let
+//  B) const
+//  C) var
+//  D) none
+// o/p:
+// C) var
+// var can be redeclared.
+
+// 2. Which variable declaration is block-scoped?
+// A) var
+//  B) let
+//  C) Both var and let
+//  D) none
+// o/p:
+// B) let
+// let and const are block-scoped, but here best answer is let.
+ 
+
+// 3. What happens if you try to reassign a value to a const variable?
+// A) It updates the value
+//  B) It creates a new variable
+//  C) It throws an error
+//  D) It silently ignores
+// o/p:
+// C) It throws an error
+// const cannot be reassigned.
+
+
+// 4. What is the output?
+// console.log(typeof null);
+
+// A) "null"
+//  B) "undefined"
+//  C) "object"
+//  D) "string"
+// o/p:
+// C) "object"
+// A well-known JavaScript bug.
+ 
+
+// 5. What is the scope of a var declared variable inside a function?
+// A) Global
+//  B) Block
+//  C) Function
+//  D) Lexical
+// o/p:
+// C) Function
+// var is function-scoped.
+
+// 6. Which of the following data types is not primitive?
+// A) String
+//  B) Number
+//  C) Object
+//  D) Boolean
+// o/p:
+// C) Object
+// Everything except object is primitive.
+
+
+// 7. What will this code print?
+// {
+//   let a = 10;
+//   var b = 20;
+// }
+// console.log(typeof a);
+// console.log(typeof b);
+
+// A) number, number
+//  B) undefined, number
+//  C) error, number
+//  D) error, undefined
+// o/p:
+// C) error, number
+// a not accessible → error; b accessible → number.
+
+
+// 8. Which variable is hoisted with initialization?
+// A) let
+//  B) const
+//  C) var
+//  D) none
+// o/p:
+// C) var
+// var hoisted and initialized as undefined
+
+
+// 9. What is the output?
+// const name = "Ravi";
+// name = "Raj";
+// console.log(name);
+
+// A) Ravi
+//  B) Raj
+//  C) Error
+//  D) undefined
+// o/p:
+// C) Error
+// Cannot reassign a constant.
+
+// 10. Which of the following is a truthy value in JavaScript?
+// A) 0
+//  B) ""
+//  C) null
+//  D) "false"
+
+// D) "false"
+// Non-empty strings are truthy, even "false".
+
+// 🧩 JS Output-Based Questions — let, var, const
+
+// 1️⃣
+// var x = 10;
+// let y = 20;
+// const z = 30;
+// x = 15;
+// y = 25;
+// // z = 35;  // uncomment this line
+// console.log(x, y, z);
+
+// Options:
+//  A) 10 20 30
+//  B) 15 25 30
+//  C) Error
+//  D) 15 20 30
+//  📝 const can’t be reassigned, but others can.
+
+// o/p:
+// B) 15 25 30
+// var and let can be reassigned; const stays same.
+
+
+// 2️⃣
+// var a = 5;
+// var a = 10;
+// console.log(a);
+
+// Options:
+//  A) 5
+//  B) 10
+//  C) Error
+//  D) undefined
+// o/p:
+// B) 10
+// var allows redeclaration.
+
+
+// 3️⃣
+// let a = 5;
+// let a = 10;
+// console.log(a);
+
+// Options:
+//  A) 5
+//  B) 10
+//  C) Error
+//  D) undefined
+
+//  📝 let doesn’t allow redeclaration in the same scope.
+// o/p:
+// C) Error
+
+
+// 4️⃣
+// {
+//   var a = 1;
+//   let b = 2;
+//   const c = 3;
+// }
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+// Options:
+//  A) 1 2 3
+//  B) 1 Error Error
+//  C) 1 undefined undefined
+//  D) Error
+//  📝 var is function-scoped; let and const are block-scoped.
+// o/p:
+// B) 1 Error Error
+
+
+// 5️⃣
+// console.log(a);
+// var a = 10;
+
+// Options:
+//  A) 10
+//  B) undefined
+//  C) Error
+//  D) null
+
+//  📝 var is hoisted with undefined.
+// o/p:
+// B) undefined
+
+// 6️⃣
+// console.log(b);
+// let b = 10;
+
+// Options:
+//  A) 10
+//  B) undefined
+//  C) ReferenceError
+//  D) null
+
+//  📝 let is hoisted but in a Temporal Dead Zone (TDZ).
+// o/p:
+// C) ReferenceError
+
+// 7️⃣
+// function test() {
+//   if (true) {
+//     var x = 100;
+//     let y = 200;
+//   }
+//   console.log(x);
+//   console.log(y);
+// }
+// test();
+
+// Options:
+//  A) 100 200
+//  B) 100 Error
+//  C) undefined 200
+//  D) Error
+
+//  📝 y is block-scoped and not accessible outside if block.
+// o/p:
+// B) 100 Error
+
+// 8️⃣
+// const num;
+// num = 50;
+// console.log(num);
+
+// Options:
+//  A) 50
+//  B) undefined
+//  C) Error
+//  D) null
+
+//  📝 You must initialize a const when declaring it.
+// o/p:
+// C) Error
+
+// 9️⃣
+// var x = 1;
+// let y = 2;
+// {
+//   var x = 10;
+//   let y = 20;
+//   console.log(x, y);
+// }
+// console.log(x, y);
+
+// Options:
+//  A) 10 20 and 1 2
+//  B) 10 20 and 10 2
+//  C) 1 2 and 1 2
+//  D) Error
+
+//  📝 var overwrites globally; let stays block-scoped.
+// o/p:
+// B) 10 20 and 10 2
+
+// 🔟
+// const arr = [1, 2, 3];
+// arr.push(4);
+// console.log(arr);
+
+// Options:
+//  A) [1, 2, 3]
+//  B) [1, 2, 3, 4]
+//  C) Error
+//  D) undefined
+
+//  📝 const prevents reassignment, not modification of array/object contents.
+// o/p:
+// B) [1, 2, 3, 4]
+
+    </script>
+</body>
+
+</html>
