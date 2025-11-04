@@ -9,6 +9,44 @@
 
 <body>
     <script>
+
+        // falsy values:
+        //         👉 List of all falsy values (only 8 total):
+
+        // #	Value	Description
+        // 1	false	The Boolean value false
+        // 2	0	The number zero
+        // 3	-0	Negative zero (yes, it exists in JS)
+        // 4	0n	BigInt zero
+        // 5	"" or ''	Empty string
+        // 6	null	Absence of any value
+        // 7	undefined	Variable declared but not assigned
+        // 8	NaN	“Not a Number” value
+
+        // 💡 All other values are truthy, including:
+
+        // 'false' (non-empty string)
+
+        // '0'
+
+        // [] (empty array)
+
+        // {} (empty object)
+
+        // function() {} (function)
+
+        // Infinity, etc.
+
+
+        //         💡 2️⃣ Nullish Coalescing Operator (??)
+        // 👉 Syntax:
+        // result = value1 ?? value2;
+
+        // 👉 Meaning:
+
+        // It returns value1 if it’s NOT null or undefined,
+        // otherwise returns value2.
+
         // 🧠 Part 1: Functional Scope vs Block Scope (let, var, const)
 
         // Concept: variable scope, shadowing, redeclaration, and hoisting
