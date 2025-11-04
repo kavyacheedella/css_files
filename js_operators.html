@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+//         🧩 Part 1: let, var, const & Scope
+
+//      1.
+//         var a = 10;
+//         let b = 20;
+//         const c = 30;
+//         console.log(a, b, c);
+//  Output: 10 20 30
+//  All declared properly; no scoping issues.
+
+//       2.
+//         var x = 5;
+//         var x = 10;
+//         console.log(x);
+
+
+//  Output: 10
+//  var allows redeclaration within the same scope — value overwritten.
+
+//       3.
+//         let y = 5;
+//         y = 10;
+//         console.log(y);
+
+
+// Output: 10
+// let allows reassignment, but not redeclaration.
+
+//        4.
+//         const z = 5;
+//         z = 10;
+//         console.log(z);
+
+
+// Error: TypeError: Assignment to constant variable.
+// const cannot be reassigned.
+
+//       5.
+//         {
+//             var a = 1;
+//             let b = 2;
+//             const c = 3;
+//         }
+//         console.log(a); // 1
+//         console.log(b);
+
+
+// Output:  1
+//  ReferenceError: b is not defined
+//  var is function-scoped(available outside the block).
+//   let and const are block-scoped(not accessible outside {}).
+
+//     6️.
+//         for (var i = 0; i < 3; i++) { }
+//         console.log(i);
+
+
+//  Output: 3
+// var is function-scoped → accessible outside the loop.
+
+//    7️.
+//         for (let j = 0; j < 3; j++) { }
+//         console.log(j);
+
+
+//  Output: ReferenceError: j is not defined
+//  let is block-scoped → not accessible outside the loop.
+
+//     8️.
+//         console.log(a);
+//         var a = 10;
+
+
+//  Output: undefined
+// var is hoisted but not initialized until runtime.
+
+//       9.
+//         console.log(b);
+//         let b = 10;
+
+
+//  Output: ReferenceError: Cannot access 'b' before initialization
+//  let is hoisted but stays in Temporal Dead Zone(TDZ) until declared.
+
+//    10.
+//         const person = { name: "Noor" };
+//         person.name = "Jahan";
+//         console.log(person.name);
+
+
+//  Output: Jahan
+// const prevents reassignment of the variable, but object properties can be changed(mutable).
+
+//  Part 2: Operators
+//       1.
+//         console.log(5 + "5");
+
+// Output: "55"
+//  + with string ⇒ concatenation.
+
+// 2️.
+//         console.log("5" - 2);
+
+
+//  Output: 3
+// forces numeric conversion(string → number).
+
+// 3️.
+//         console.log(5 == "5");
+//         console.log(5 === "5");
+
+
+//  Output:
+//         true
+//         false
+//  == checks value only(type conversion).
+// === checks value + type(strict equality).
+
+
+// 4️.
+//         console.log(null == undefined);
+//         console.log(null === undefined);
+
+
+//  Output:
+//         true
+//         false
+//  == considers them equal loosely; === checks type → different.
+
+
+
+// 5️.
+//         console.log(true && false);
+//         console.log(true || false);
+
+// Output:
+//         false
+//         true
+//  Logical AND / OR.
+
+
+
+// 6️.
+//         console.log(5 > 3 ? "Yes" : "No");
+
+
+//  Output: "Yes"
+//  Ternary operator → condition true → returns "Yes".
+
+
+// 7️.
+//         let a = null ?? "Default";
+//         console.log(a);
+
+
+//  Output: "Default"
+// Nullish coalescing(??) returns right - hand value if left is null or undefined.
+
+
+// 8️.
+//         let a = 0 ?? 5;
+//         console.log(a);
+
+//  Output: 0
+//  0 is not null or undefined, so ?? keeps 0.
+
+
+// 9.
+//         console.log(5 & 3);
+//         console.log(5 | 3);
+
+
+//  Output:
+//  1
+//  7
+
+// 5(0101)
+
+// 3(0011)
+
+// & → 0001 = 1
+
+// | → 0111 = 7
+
+
+// 10.
+//         let x = 5;
+//         x += 3;
+//         console.log(x);
+
+
+// Output: 8
+// x += 3 → shorthand for x = x + 3.
+
+    </script>
+</body>
+
+</html>
