@@ -1,0 +1,56 @@
+/* Floating Scroll Button */
+.scroll-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #8b6cf7;
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  padding: 14px 18px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+/* Hover effect */
+.scroll-btn:hover {
+  background: #9d85fa;
+  transform: translateY(-4px);
+}
+
+/* Flip the arrow when on the next section */
+#next:target ~ #scroll-btn {
+  transform: rotate(180deg);
+}
+
+/* Smooth scrolling for the page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .scroll-btn {
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    padding: 12px 15px;
+  }
+}
+
+/* Example styling for demo sections */
+.hero, .cta-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  background: #111827;
+}
+
+.cta-section {
+  background: #1f2937;
+}

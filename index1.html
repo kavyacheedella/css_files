@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Insertion & Variables</title>
+
+  <!-- Internal JavaScript -->
+  <script>
+    // Internal JavaScript
+    console.log("This is from Internal JavaScript!");
+
+    // Declare variables
+    var username = "Kavya";
+    let age = 22;
+    const city = "Hyderabad";
+
+    console.log("Name:", username);
+    console.log("Age:", age);
+    console.log("City:", city);
+
+    // Display directly on webpage
+    document.write("<h3>Internal JavaScript Output:</h3>");
+    document.write("Name: " + username + "<br>");
+    document.write("Age: " + age + "<br>");
+    document.write("City: " + city + "<br><br>");
+  </script>
+</head>
+
+<body>
+  <h2>JavaScript Example: Inline, Internal, and External</h2>
+
+  <!-- Inline JavaScript -->
+  <button onclick="alert('This message is from Inline JavaScript!')">
+    Click for Inline JS Message
+  </button>
+
+  <br><br>
+  <h3>External JavaScript Output:</h3>
+  <div id="externalOutput"></div>
+
+  <!-- External JavaScript -->
+  <script src="script1.js"></script>
+</body>
+</html>

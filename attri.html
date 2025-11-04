@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Attribute Selectors Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 30px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    h2 {
+      color: #0066cc;
+      margin-top: 40px;
+    }
+
+    p, a, input {
+      display: block;
+      margin: 8px 0;
+    }
+    
+
+    /* 1️ [attribute] - has the attribute */
+    input[required] {
+      border: 2px solid red;
+      background-color: #ffe6e6;
+    }
+
+    /* 2️ [attribute="value"] - exact value */
+    a[target="_blank"] {
+      background-color: blue;
+      text-decoration: underline;
+    }
+
+    /* 3️ [attribute~="value"] - word contains */
+    [title~="flower"] {
+      color: deeppink;
+      font-weight: bold;
+    }
+
+    /* 4️ [attribute|="value"] - value or starts with value- */
+    [lang|="en"] {
+      background-color: #e6f2ff;
+      padding: 4px;
+    }
+
+    /* 5️ [attribute^="value"] - starts with */
+    a[href^="https"] {
+      color: green;
+      font-weight: bold;
+
+    }
+
+    /* 6️ [attribute$="value"] - ends with */
+    a[href$=".com"] {
+      color: orange;
+    }
+
+    /* 7️ [attribute*="value"] - contains */
+    a[href*="google"] {
+      color: red;
+    }
+
+    .example-box {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Attribute Selectors Demo</h1>
+
+  <div class="example-box">
+    <h2>1 [attribute]</h2>
+    <p>Input with the <b>required</b> attribute:</p>
+    <input type="text" placeholder="Enter name" required>
+    <input type="text" placeholder="Optional field">
+  </div>
+
+  <div class="example-box">
+    <h2>2️ [attribute="value"]</h2>
+    <p>Links with <b>target="_blank"</b> will be blue:</p>
+    <a href="https://example.com" target="_blank">Open Example</a>
+    <a href="https://test.com" target="_self">Normal Link</a>
+  </div>
+
+  <div class="example-box">
+    <h2>3️ [attribute~="value"]</h2>
+    <p>Elements with <b>title</b> containing the word “flower”:</p>
+    <p title="red flower">This is a red flower</p>
+    <p title="flower garden">This is a flower garden</p>
+    <p title="sunflower">This is not selected</p>
+  </div>
+
+  <div class="example-box">
+    <h2>4️ [attribute|="value"]</h2>
+    <p>Paragraphs with <b>lang="en"</b> or starting with <b>en-</b>:</p>
+    <p lang="en">English paragraph</p>
+    <p lang="en-US">American English paragraph</p>
+    <p lang="fr">French paragraph</p>
+  </div>
+
+  <div class="example-box">
+    <h2>5️ [attribute^="value"]</h2>
+    <p>Links that <b>start with "https"</b>:</p>
+    <a href="https://secure.com">Secure Link</a>
+    <a href="http://normal.com">Normal Link</a>
+  </div>
+
+  <div class="example-box">
+    <h2>6️ [attribute$="value"]</h2>
+    <p>Links that <b>end with ".com"</b>:</p>
+    <a href="https://google.com">Google.com</a>
+    <a href="https://mysite.org">Mysite.org</a>
+  </div>
+
+  <div class="example-box">
+    <h2>7️ [attribute*="value"]</h2>
+    <p>Links that <b>contain "google"</b> anywhere in the URL:</p>
+    <a href="https://google.com">Google</a>
+    <a href="https://maps.google.co.in">Google Maps</a>
+    <a href="https://yahoo.com">Yahoo</a>
+  </div>
+
+</body>
+</html>
