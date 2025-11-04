@@ -9,6 +9,176 @@
 
 <body>
     <script>
+
+        //         🧠 Conditional and Control Statements in JavaScript
+        // 💡 Meaning:
+
+        // Conditional and control statements help us control the flow of a program — that means we can decide which part of the code runs based on certain conditions (true or false).
+
+        // In simple words:
+        // 👉 “If something is true, do this. Otherwise, do something else.”
+
+        // 🔹 1️⃣ Conditional Statements
+
+        // These statements are used to make decisions in the program.
+
+        // ✅ a) if statement
+
+        // Runs a block of code only if the condition is true.
+
+        // let age = 20;
+        // if (age >= 18) {
+        //   console.log("You can vote");
+        // }
+
+
+        // 🧾 Output: You can vote
+
+        // ✅ b) if...else statement
+
+        // Used when we have two choices — one for true and another for false.
+
+        // let age = 15;
+        // if (age >= 18) {
+        //   console.log("You can vote");
+        // } else {
+        //   console.log("You are too young");
+        // }
+
+
+        // 🧾 Output: You are too young
+
+        // ✅ c) if...else if...else statement
+
+        // Used when there are multiple conditions.
+
+        // let marks = 75;
+        // if (marks > 80) console.log("Grade A");
+        // else if (marks >= 60) console.log("Grade B");
+        // else if (marks >= 40) console.log("Grade C");
+        // else console.log("Fail");
+
+
+        // 🧾 Output: Grade B
+
+        // ✅ d) switch statement
+
+        // Used when we need to compare one value with many possible cases.
+
+        // let day = 3;
+        // switch (day) {
+        //   case 1: console.log("Monday"); break;
+        //   case 2: console.log("Tuesday"); break;
+        //   case 3: console.log("Wednesday"); break;
+        //   default: console.log("Invalid day");
+        // }
+
+
+        // 🧾 Output: Wednesday
+
+        // 💬 break stops the switch from running other cases.
+
+        // 🔹 2️⃣ Control Statements (Loop Control)
+
+        // These help us repeat tasks or control the loop flow.
+
+        // ✅ a) for loop
+
+        // Runs code a fixed number of times.
+
+        // for (let i = 1; i <= 5; i++) {
+        //   console.log(i);
+        // }
+
+
+        // 🧾 Output: 1 2 3 4 5
+
+        // ✅ b) while loop
+
+        // Runs code while the condition is true.
+
+        // let i = 1;
+        // while (i <= 3) {
+        //   console.log(i);
+        //   i++;
+        // }
+
+
+        // 🧾 Output: 1 2 3
+
+        // ✅ c) do...while loop
+
+        // Runs code at least once, even if condition is false.
+
+        // let i = 5;
+        // do {
+        //   console.log(i);
+        //   i++;
+        // } while (i < 5);
+
+
+        // 🧾 Output: 5
+
+        // ✅ d) for...of loop
+
+        // Used to go through values in an array.
+
+        // let colors = ["red", "green", "blue"];
+        // for (let color of colors) {
+        //   console.log(color);
+        // }
+
+
+        // 🧾 Output: red green blue
+
+        // ✅ e) for...in loop
+
+        // Used to go through keys in an object.
+
+        // let person = { name: "Kavya", age: 21 };
+        // for (let key in person) {
+        //   console.log(key + ": " + person[key]);
+        // }
+
+
+        // 🧾 Output: name: Kavya, age: 21
+
+        // ✅ f) break statement
+
+        // Stops the loop completely when a condition is met.
+
+        // for (let i = 1; i <= 5; i++) {
+        //   if (i === 3) break;
+        //   console.log(i);
+        // }
+
+
+        // 🧾 Output: 1 2
+
+        // ✅ g) continue statement
+
+        // Skips the current iteration and moves to the next.
+
+        // for (let i = 1; i <= 5; i++) {
+        //   if (i === 3) continue;
+        //   console.log(i);
+        // }
+
+
+        // 🧾 Output: 1 2 4 5
+
+
+
+        // 🪄 In Simple Terms:
+
+        // Conditional statements = “Decide what to do.”
+
+        // Loop statements = “Repeat something.”
+
+        // Control statements = “Manage when to stop or skip.”
+
+
+
         // 🧠 1️⃣ for loop
         // let sum = 0;
         // for (let i = 1; i <= 5; i++) {
@@ -36,7 +206,7 @@
 
         // ✅ Expected Output:
 
-        // 1 2 3 4 
+        // 1 2 3 4
 
 
         // 🧠 Loop runs while num < 5. Appends num followed by space.

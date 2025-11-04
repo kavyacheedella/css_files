@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // functions:
+
+        // 🧠 Functions in JavaScript
+        // 💡 What is a Function?
+
+        // A function is a block of code that performs a specific task.
+        // You can define it once and use (call) it many times.
+
+        // 👉 In simple words:
+        // A function is like a mini program inside your program — you give it inputs, it does some work, and gives an output.
+
+        // ⚙️ Why We Use Functions
+
+        // We use functions in JavaScript for several important reasons:
+
+        // Code Reusability:
+        // Write the code once and use it multiple times.
+
+        // Organization:
+        // Helps divide large programs into smaller, manageable parts.
+
+        // Avoid Repetition:
+        // Reduces redundancy — we don’t have to rewrite the same logic.
+
+        // Easy Debugging:
+        // Makes it easier to find and fix errors since each function performs a single task.
+
+        // Modularity:
+        // Allows building programs step by step by combining small functions.
+
+        // Improves Readability:
+        // Code becomes cleaner and easier to understand.
+
+        // 🧩 Basic Function Syntax
+        // function functionName(parameters) {
+        //   // code to be executed
+        //   return result;
+        // }
+
+
+        // Example:
+
+        // function add(a, b) {
+        //   return a + b;
+        // }
+        // console.log(add(3, 4)); // Output: 7
+
+        // 🔹 Types of Functions in JavaScript
+
+        // JavaScript has many types of functions — each used for specific situations.
+
+        // 🟩 1️⃣ Function Declaration (Named Function)
+
+        // Declared using the function keyword.
+
+        // function greet() {
+        //   console.log("Hello World!");
+        // }
+        // greet(); // Output: Hello World!
+
+
+        // ✅ Hoisted — can be used before declaration.
+
+        // 🟩 2️⃣ Function Expression
+
+        // A function stored in a variable.
+
+        // let greet = function() {
+        //   return "Hello Everyone!";
+        // };
+        // console.log(greet());
+
+
+        // ⚠️ Not hoisted — cannot be used before declaration.
+
+        // 🟩 3️⃣ Anonymous Function
+
+        // A function without a name, often used inside expressions or callbacks.
+
+        // setTimeout(function() {
+        //   console.log("Hi after 2 seconds");
+        // }, 2000);
+
+        // 🟩 4️⃣ Arrow Function (ES6)
+
+        // A shorter way to write functions using =>.
+
+        // let add = (a, b) => a + b;
+        // console.log(add(2, 3)); // 5
+
+
+        // ✅ Arrow functions don’t have their own this — they use the surrounding scope.
+
+        // 🟩 5️⃣ Immediately Invoked Function Expression (IIFE)
+
+        // A function that runs immediately after it is defined.
+
+        // (function() {
+        //   console.log("Runs instantly!");
+        // })();
+
+
+        // ✅ Used to avoid polluting the global scope.
+
+        // 🟩 6️⃣ Higher-Order Functions
+
+        // Functions that take another function as an argument or return a function.
+
+        // function greet(name) {
+        //   return "Hello " + name;
+        // }
+
+        // function display(fn, name) {
+        //   console.log(fn(name));
+        // }
+
+        // display(greet, "Kavya"); // Output: Hello Kavya
+
+        // 🟩 7️⃣ Callback Functions
+
+        // A function that is passed as an argument and executed later.
+
+        // function process(callback) {
+        //   callback();
+        // }
+        // process(() => console.log("Callback executed"));
+
+        // 🟩 8️⃣ Recursive Function
+
+        // A function that calls itself until a condition is met.
+
+        // function factorial(n) {
+        //   if (n === 1) return 1;
+        //   return n * factorial(n - 1);
+        // }
+        // console.log(factorial(4)); // Output: 24
+
+        // 🟩 9️⃣ Generator Function
+
+        // Uses the function* keyword and yield to return values one at a time.
+
+        // function* count() {
+        //   yield 1;
+        //   yield 2;
+        //   yield 3;
+        // }
+        // let gen = count();
+        // console.log(gen.next()); // {value:1, done:false}
+
+        // 🟩 🔟 Pure Function
+
+        // A function that gives the same output for the same inputs and has no side effects.
+
+        // function add(a, b) {
+        //   return a + b;
+        // }
+
+
+        // ✅ Predictable and easy to test.
+
+        // ⚙️ Function Parameters and Arguments
+
+        // Parameters: variables inside the function definition.
+
+        // Arguments: actual values passed when calling the function.
+
+        // function greet(name) {   // 'name' is a parameter
+        //   console.log("Hello " + name);
+        // }
+        // greet("Kavya"); // "Kavya" is an argument
+
+        // 💡 Return Statement
+
+        // Used to send a value back to the place where the function was called.
+
+        // function square(n) {
+        //   return n * n;
+        // }
+        // let result = square(5); // result = 25
+
+        // 🧩 Advantages of Using Functions
+        // Advantage	Description
+        // Reusability	Use the same code again and again
+        // Modularity	Divide program into small parts
+        // Debugging	Easier to fix errors
+        // Efficiency	Reduces code duplication
+        // Readability	Code becomes clear and organized
+
+        // 🧠 In Short:
+
+        // Functions make programs simpler, smarter, and organized by allowing us to reuse logic and control execution easily.
+
+
+
+        //         1️⃣ Function Definition & Function Expression
+        //         console.log(a());
+        //         console.log(b());
+
+        //         function a() {
+        //             return "Function Declaration";
+        //         }
+
+        //         var b = function () {
+        //             return "Function Expression";
+        //         };
+
+
+        //  Expected Output:
+        // Function Declaration
+        //         TypeError: b is not a function
+        //  Explanation:
+
+        //         function a() is hoisted completely — works before declaration.
+
+        // b is hoisted as undefined, so calling it before assignment causes an error.
+
+
+
+        // 2️⃣ Anonymous Function(inside expression)
+        //         let greet = function () {
+        //             return "Hello!";
+        //         };
+        //         console.log(typeof greet);
+        //         console.log(greet.name);
+
+
+        //  Expected Output:
+
+        //         function
+        //             greet
+        // Explanation:
+
+        // Anonymous functions(no name) can be assigned to variables.
+
+        // JS infers the name "greet" automatically from the variable name.
+
+
+        //  3️⃣ IIFE(Immediately Invoked Function Expression)
+        //         let result = (function (x, y) {
+        //             return x * y;
+        //         })(3, 4);
+
+        //         console.log(result);
+
+
+        //  Expected Output:
+        //         12
+        // Explanation:
+
+        // IIFE executes immediately after it’s defined.
+
+        // (function () { ... })(args) pattern runs once instantly.
+
+
+
+        //  4️⃣ Arrow Function and this
+        //         let user = {
+        //             name: "Noor",
+        //             say: () => {
+        //                 console.log(this.name);
+        //             },
+        //         };
+        //         user.say();
+
+
+        // Expected Output:
+
+        //         undefined
+        //  Explanation:
+
+        // Arrow functions don’t have their own this.
+
+        // They take this from outer(global) scope → no name there.
+
+
+
+        // 5️⃣ Generator Function
+        //         function* counter() {
+        //             yield 1;
+        //             yield 2;
+        //             return 3;
+        //         }
+
+        //         let gen = counter();
+        //         console.log(gen.next());
+        //         console.log(gen.next());
+        //         console.log(gen.next());
+
+
+        // Expected Output:
+
+        //         { value: 1, done: false }
+        //         { value: 2, done: false }
+        //         { value: 3, done: true }
+
+        // Explanation:
+
+        // Generator functions(function*) return iterator objects.
+
+        //         yield pauses and returns a value each time.
+
+
+
+        //  6️⃣ First - Class Function
+        //         function greet(name) {
+        //             return "Hello " + name;
+        //         }
+
+        //         function execute(fn, value) {
+        //             return fn(value);
+        //         }
+
+        //         console.log(execute(greet, "Students"));
+
+
+        // Expected Output:
+
+        // Hello Students
+        // Explanation:
+        // Functions can be:
+
+        //         Stored in variables
+
+        //         Passed as arguments
+
+        // Returned from other functions
+        // Hence, “first - class citizens” in JS.
+
+
+        // 7️⃣ Pure Function
+        //         let count = 0;
+        //         function add(a, b) {
+        //             return a + b;
+        //         }
+        //         console.log(add(3, 4));
+        //         console.log(count);
+
+
+        // Expected Output:
+        //         7
+        //         0
+        //  Explanation:
+
+        //         add() depends only on inputs → always gives same result for same inputs.
+
+        //             Doesn’t change external variables → no side effects → pure function.
+
+
+
+        // 8️⃣ Default Parameters
+        //         function multiply(a, b = 5) {
+        //             return a * b;
+        //         }
+        //         console.log(multiply(3));
+        //         console.log(multiply(3, 2));
+
+
+        // Expected Output:
+
+        //         15
+        //         6
+        // Explanation:
+        // If second argument isn’t passed, b defaults to 5.
+
+
+
+        // 9️⃣ Recursion
+        //         function factorial(n) {
+        //             if (n === 1) return 1;
+        //             return n * factorial(n - 1);
+        //         }
+        //         console.log(factorial(4));
+
+
+        // Expected Output:
+        //         24
+        // Explanation:
+        //         Recursion = a function calling itself until base condition met.
+        // 4 × 3 × 2 × 1 = 24
+
+
+
+        // 🔟 Callback & Higher - Order Function
+        //         function printResult(fn, num) {
+        //             console.log(fn(num));
+        //         }
+
+        //         function double(n) {
+        //             return n * 2;
+        //         }
+
+        //         printResult(double, 10);
+
+
+        // Expected Output:
+
+        //         20
+
+
+        // Explanation:
+
+        //         printResult = Higher - Order Function(takes another function as input).
+
+        //             double = Callback Function(passed and executed inside another function).
+    </script>
+</body>
+
+</html>
