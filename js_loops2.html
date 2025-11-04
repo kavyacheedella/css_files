@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 🧠 1️⃣ for loop
+        // let sum = 0;
+        // for (let i = 1; i <= 5; i++) {
+        //   sum += i;
+        // }
+        // console.log(sum);
+
+
+        // ✅ Expected Output:
+
+        // 15
+
+
+        // 🧠 Calculation: 1 + 2 + 3 + 4 + 5 = 15
+
+        // 🧠 2️⃣ while loop
+        // let num = 1;
+        // let result = "";
+        // while (num < 5) {
+        //   result += num + " ";
+        //   num++;
+        // }
+        // console.log(result);
+
+
+        // ✅ Expected Output:
+
+        // 1 2 3 4 
+
+
+        // 🧠 Loop runs while num < 5. Appends num followed by space.
+
+        // 🧠 3️⃣ do...while loop
+        // let x = 5;
+        // do {
+        //   console.log(x);
+        //   x++;
+        // } while (x < 5);
+
+
+        // ✅ Expected Output:
+
+        // 5
+
+
+        // 🧠 do...while runs at least once, even if condition is false initially.
+
+        // 🧠 4️⃣ continue statement
+        // for (let i = 1; i <= 5; i++) {
+        //   if (i === 3) continue;
+        //   console.log(i);
+        // }
+
+
+        // ✅ Expected Output:
+
+        // 1
+        // 2
+        // 4
+        // 5
+
+
+        // 🧠 continue skips the iteration when i === 3.
+
+        // 🧠 5️⃣ break statement
+        // for (let i = 1; i <= 5; i++) {
+        //   if (i === 4) break;
+        //   console.log(i);
+        // }
+
+
+        // ✅ Expected Output:
+
+        // 1
+        // 2
+        // 3
+
+
+        // 🧠 break stops loop when i === 4.
+
+        // 🧠 6️⃣ for...of loop (array)
+        // let colors = ["red", "green", "blue"];
+        // for (let color of colors) {
+        //   console.log(color.toUpperCase());
+        // }
+
+
+        // ✅ Expected Output:
+
+        // RED
+        // GREEN
+        // BLUE
+
+
+        // 🧠 for...of iterates through array values.
+
+        // 🧠 7️⃣ for...in loop (object)
+        // let person = { name: "Alice", age: 25, city: "Delhi" };
+        // for (let key in person) {
+        //   console.log(key + ": " + person[key]);
+        // }
+
+
+        // ✅ Expected Output:
+
+        // name: Alice
+        // age: 25
+        // city: Delhi
+
+
+        // 🧠 for...in iterates through keys of an object.
+
+        // 🧠 8️⃣ Reverse a for loop
+        // for (let i = 5; i >= 1; i--) {
+        //   console.log(i);
+        // }
+
+
+        // ✅ Expected Output:
+
+        // 5
+        // 4
+        // 3
+        // 2
+        // 1
+
+
+        // 🧠 Counts backward from 5 down to 1.
+
+        // 🧠 9️⃣ Nested loop with continue
+        // for (let i = 1; i <= 3; i++) {
+        //   for (let j = 1; j <= 3; j++) {
+        //     if (j === 2) continue;
+        //     console.log(i, j);
+        //   }
+        // }
+
+
+        // ✅ Expected Output:
+
+        // 1 1
+        // 1 3
+        // 2 1
+        // 2 3
+        // 3 1
+        // 3 3
+
+
+        // 🧠 Skips when j === 2 in inner loop.
+
+        // 🧠 🔟 Reverse traversal using while loop
+        // let arr = [10, 20, 30];
+        // let i = arr.length - 1;
+        // while (i >= 0) {
+        //   console.log(arr[i]);
+        //   i--;
+        // }
+
+
+        // ✅ Expected Output:
+
+        // 30
+        // 20
+        // 10
+
+
+        // 🧠 Starts from last index (2) and moves backward until 0.
+    </script>
+</body>
+
+</html>
