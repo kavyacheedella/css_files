@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 🧠 Part 1: Functional Scope vs Block Scope (let, var, const)
+
+        // Concept: variable scope, shadowing, redeclaration, and hoisting
+
+        // Q1
+        // function test() {
+        //   var x = 10;
+        //   if (true) {
+        //     var x = 20;
+        //     console.log(x);
+        //   }
+        //   console.log(x);
+        // }
+        // test();
+
+        //  Output:
+        // 20
+        // 20
+        //  var is function-scoped, not block-scoped. Both refer to the same variable.
+
+        // Q2
+        // function example() {
+        //   let y = 5;
+        //   if (true) {
+        //     let y = 10;
+        //     console.log(y);
+        //   }
+        //   console.log(y);
+        // }
+        // example();
+
+        //  Output:
+        // 10
+        // 5
+        //  Inner let y shadows the outer one — both exist separately in different blocks.
+
+
+        // Q3
+        // function run() {
+        //   if (true) {
+        //     var a = 100;
+        //     let b = 200;
+        //     const c = 300;
+        //   }
+        //   console.log(a);
+        //   console.log(typeof b);
+        // }
+        // run();
+
+        //  Output:
+        // 100
+        // undefined
+        //  a (var) accessible outside block;
+        // b (let) block-scoped → typeof b gives "undefined" (not accessible).
+
+        // Q4
+        // var x = 1;
+        // function outer() {
+        //   console.log(x);
+        //   var x = 2;
+        // }
+        // outer();
+
+        //  Output:
+        // undefined
+        //  Variable x is hoisted inside the function → local x shadows global one, but it’s not initialized yet → undefined.
+
+        // Q5
+        // let x = 10;
+        // {
+        //   let x = 20;
+        //   {
+        //     let x = 30;
+        //     console.log(x);
+        //   }
+        //   console.log(x);
+        // }
+        // console.log(x);
+
+
+        //  Output:
+        // 30
+        // 20
+        // 10
+        //  Each block has its own x. Inner shadowing at every level.
+
+        // Q6
+        // {
+        //   var a = 1;
+        //   let b = 2;
+        //   const c = 3;
+        // }
+        // console.log(a);
+        // console.log(typeof b);
+        // console.log(typeof c);
+
+
+        // Output:
+        // 1
+        // undefined
+        // undefined
+        // a (var) escapes block;
+        // b, c are block-scoped → inaccessible outside (typeof returns "undefined").
+
+        // Q7
+        // for (var i = 0; i < 3; i++) {}
+        // console.log(i);
+
+        // for (let j = 0; j < 3; j++) {}
+        // console.log(typeof j);
+
+        //  Output:
+        // 3
+        // undefined
+        //  var escapes loop; let is block-scoped to the loop only.
+
+        // Q8
+        // function demo() {
+        //   console.log(a);
+        //   var a = 50;
+        //   console.log(a);
+        // }
+        // demo();
+
+        // Output:
+        // undefined
+        // 50
+        //  var a hoisted → declared but undefined before assignment.
+
+        // Q9
+        // function blockTest() {
+        //   const value = 5;
+        //   if (true) {
+        //     const value = 10;
+        //     console.log(value);
+        //   }
+        //   console.log(value);
+        // }
+        // blockTest();
+
+        //  Output:
+        // 10
+        // 5
+        // Block-scoped constants — inner one shadows outer one.
+
+        // Q10
+        // function testScope() {
+        //   if (true) {
+        //     var x = "var inside";
+        //     let y = "let inside";
+        //   }
+        //   console.log(x);
+        //   console.log(typeof y);
+        // }
+        // testScope();
+
+        //  Output:
+        // var inside
+        // undefined
+        //  x (var) escapes block; y (let) doesn’t → inaccessible.
+
+        // 🧩 Part 2: if, else if, and switch case — Practice Tasks
+        //  1️⃣ Student Grades
+        // let marks = 75;
+
+        // if (marks > 80) console.log("Grade A");
+        // else if (marks >= 60) console.log("Grade B");
+        // else if (marks >= 40) console.log("Grade C");
+        // else console.log("Fail");
+
+
+        // ✅ Output: "Grade B"
+
+        // 🗓 2️⃣ Switch Case — Day Name
+        // let day = 3;
+        // switch (day) {
+        //   case 1: console.log("Monday"); break;
+        //   case 2: console.log("Tuesday"); break;
+        //   case 3: console.log("Wednesday"); break;
+        //   case 4: console.log("Thursday"); break;
+        //   case 5: console.log("Friday"); break;
+        //   case 6: console.log("Saturday"); break;
+        //   case 7: console.log("Sunday"); break;
+        //   default: console.log("Invalid Day");
+        // }
+
+
+        // ✅ Output: "Wednesday"
+
+        // 🧮 3️⃣ Simple Calculator
+        // let a = 10, b = 5, op = "mul";
+
+        // switch (op) {
+        //   case "add": console.log(a + b); break;
+        //   case "sub": console.log(a - b); break;
+        //   case "mul": console.log(a * b); break;
+        //   case "div": console.log(a / b); break;
+        //   default: console.log("Invalid");
+        // }
+
+
+        // ✅ Output: 50
+
+        // 👶 4️⃣ Age Group
+        // let age = 25;
+        // if (age < 13) console.log("Child");
+        // else if (age <= 19) console.log("Teen");
+        // else if (age <= 59) console.log("Adult");
+        // else console.log("Senior");
+
+
+        // ✅ Output: "Adult"
+
+        // 🚦 5️⃣ Traffic Light
+        // let color = "red";
+        // switch (color) {
+        //   case "red": console.log("Stop"); break;
+        //   case "yellow": console.log("Wait"); break;
+        //   case "green": console.log("Go"); break;
+        //   default: console.log("Invalid color");
+        // }
+
+
+        // ✅ Output: "Stop"
+
+        // ⚡ Part 3: if...else if, switch case, falsy values & nullish coalescing
+        // Q1
+        // let a = 0;
+        // if (a) console.log("Truthy");
+        // else console.log("Falsy");
+
+
+        // ✅ Output: Falsy
+        // 🧠 0 is falsy.
+
+        // Q2
+        // let value = null ?? "default";
+        // console.log(value);
+
+
+        // ✅ Output: "default"
+        // 🧠 ?? returns right value if left is null or undefined.
+
+        // Q3
+        // let x;
+        // let y = x ?? 10;
+        // console.log(y);
+
+
+        // ✅ Output: 10
+        // 🧠 x is undefined, so ?? gives fallback.
+
+        // Q4
+        // let name = "";
+        // console.log(name || "Guest");
+        // console.log(name ?? "Guest");
+
+
+        // ✅ Output:
+
+        // Guest
+        // ""
+
+
+        // 🧠 || treats "" as falsy, ?? only triggers for null or undefined.
+
+        // Q5
+        // let n = NaN;
+        // if (n) console.log("True");
+        // else console.log("False");
+
+
+        // ✅ Output: False
+        // 🧠 NaN is falsy.
+
+        // Q6
+        // let choice = 2;
+        // switch (choice) {
+        //   case 1:
+        //     console.log("One");
+        //   case 2:
+        //     console.log("Two");
+        //   case 3:
+        //     console.log("Three");
+        //     break;
+        //   default:
+        //     console.log("Other");
+        // }
+
+
+        // ✅ Output:
+
+        // Two
+        // Three
+
+
+        // 🧠 No break after case 2 → fall-through until break.
+
+        // Q7
+        // let userInput = undefined;
+        // let result = userInput ?? "No Value";
+        // console.log(result);
+
+
+        // ✅ Output: "No Value"
+        // 🧠 undefined triggers the nullish fallback.
+
+        // Q8
+        // let num = "5";
+        // if (num == 5) console.log("== works");
+        // if (num === 5) console.log("=== works");
+
+
+        // ✅ Output:
+
+        // == works
+
+
+        // 🧠 == does type conversion; === requires same type.
+
+        // Q9
+        // let test = 0 || "fallback";
+        // let check = 0 ?? "fallback";
+        // console.log(test, check);
+
+
+        // ✅ Output:
+
+        // fallback 0
+
+
+        // 🧠 || treats 0 as falsy → returns fallback;
+        // ?? doesn’t treat 0 as nullish → keeps 0.
+
+        // Q10
+        // let score = null;
+        // if (score ?? 0 > 50) console.log("Passed");
+        // else console.log("Failed");
+
+
+        // ✅ Output: Failed
+        // 🧠 score ?? 0 → 0 → 0 > 50 → false.
+    </script>
+</body>
+
+</html>
